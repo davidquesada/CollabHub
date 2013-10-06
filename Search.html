@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap-3.0.0/assets/ico/favicon.png">
+
+    <title>User Profile</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.0.0/dist/css/CollabHub.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
+    <link href = "misc.css" rel= "stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fancy opening little dialogs -->
+    <script type="text/javascript" language="javascript" src="lytebox_v5.5/lytebox.js"></script>
+    <link rel="stylesheet" href="lytebox_v5.5/lytebox.css" type="text/css" media="screen" />
+
+    <script>
+      var htmlsent = "";
+      function constructURL(person,tag,location)
+      {
+        var url = "http://158.130.157.168/scripts/actions/partnersearch.php?";
+        url = url + "person="+person+"&tag="+tag+"&location=" + location;
+        url = encodeURI(url);
+        return url;
+      }
+
+      function get_request()
+      { 
+        if(htmlsent!="")
+          window.location.reload();
+        htmlsent = "";
+        person = document.getElementById('person-box').value;
+        tag = document.getElementById('tag-box').value;
+        location = document.getElementById('location-box').value;
+        cleanURL = constructURL(person,tag,location);
+        var xmlHttp = null;
+          xmlHttp = new XMLHttpRequest();
+          xmlHttp.open( "GET", cleanURL, false );
+          xmlHttp.send( null );
+          text = xmlHttp.responseText;
+          text = "<p id= "search_bar" class = "text-muted" style = "font-size: 150%">Here are the people you know!</p>" + text;
+          htmlsent = text;
+      }
+    </script>
+  </head>
+
+  <body>
+
+   <?php include "common-navbar.php"; ?>
+
+    <div>
+      <h2>Find Someone to Collaborate with...</h2>
+    </div>
+          
+
+
+      <!-- Main content div -->
+      <div class="container">
+        <!-- Example row of columns -->
+      <form class = "well form-inline" method = "get">
+        <span style="margin-right:10%"> <input type = "text" class = "input-medium clspacing" placeholder = "Who are you looking for?" id="person-box"> </span>
+        <span style="margin-right: 10%" > <input type = "text" class = "input-medium clspacing" placeholder = "What are you looking for?" id="tag-box"> </span>
+        <span style= "margin-right : 10%"> <input type = "text" class = "input-medium clspacing" placeholder = "Location" id="location-box"> </span>
+        <button type="button" id="submit-Button" class="btn btn-success" onclick="get_request()">Search</button>
+      </form>
+      <script>
+          if(htmlsent!="")
+            document.write(htmlsent);
+      </script>
+      
+
+
+  <!--       <footer>
+          <p>© Company 2013</p>
+        </footer> -->
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap-3.0.0/assets/js/jquery.js"></script>
+    <script src="bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

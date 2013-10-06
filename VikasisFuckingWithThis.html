@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap-3.0.0/assets/ico/favicon.png">
+
+    <title>User Profile</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.0.0/dist/css/CollabHub.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
+    <link href = "misc.css" rel= "stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fancy opening little dialogs -->
+    <script type="text/javascript" language="javascript" src="lytebox_v5.5/lytebox.js"></script>
+    <link rel="stylesheet" href="lytebox_v5.5/lytebox.css" type="text/css" media="screen" />
+    <script>
+  //   function tableCreate(rows,cols){
+  //     alert("YO THE TABLE IS STARTING YOU BAKA PIECE OF SHIT!")
+  //   var body = document.body,
+  //       tbl  = document.createElement('table');
+  //   tbl.style.width='100%';
+  //   tbl.style.border = "1px; solid; black;";
+
+  //   for(var i = 0; i < rows; i++){
+  //       var tr = tbl.insertRow();
+  //       for(var j = 0; j < cols; j++){
+  //           if(i==2 && j==1){
+  //                   break
+  //           } else {
+  //               var td = tr.insertCell();
+  //               td.appendChild(document.createTextNode('\u0020'))
+  //               if(i==1&&j==1){
+  //                   td.setAttribute('rowSpan','2');
+  //               }
+  //           }
+  //       }
+  //   }
+  //   body.appendChild(tbl);
+  // }
+  //   </script>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <!-- Go to Home Page -->
+          <a class="navbar-brand" href="#">CollabHub</a>
+        </div>
+        <div class="navbar-default default">
+          <ul class="nav navbar-nav navbar-right">
+            <li><button type="submit" class="btn btn-primary">
+              Collaborate!</li>
+            <li><button type="button" class="btn btn-default" style="padding: 2px; margin:8px 8px 8px 0px";>
+              <img src="settings.png" width="28px" > 
+            </button>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+     <div class = "page">
+      <p class = "lead" align = center>
+        Find Someone to Collaborate with...
+      </p>
+     </div>
+
+
+      <!-- Main content div -->
+    <div class="container">
+      <!-- Example row of columns -->
+    <form class = "well form-inline" method = "get">
+      <span style="margin-right:10%"> <input type = "text" class = "input-medium clspacing" placeholder = "Who are you looking for?"> </span>
+      <span style="margin-right: 10%" > <input type = "text" class = "input-medium clspacing" placeholder = "What are you looking for?"> </span>
+      <span style= "margin-right : 10%"> <input type = "text" class = "input-medium clspacing" placeholder = "Location"> </span>
+      <button type="button" id="submit-Button" class="btn btn-success" onclick="get_request()">Search</button>
+    </form>
+
+    <p id= "search_bar" class = "text-muted" style = "font-size: 150%"></p>
+    
+
+
+
+    </div>
+    <div id='search_results'>
+      <!-- Show all the info -->
+      
+      <script>
+      var rows = 5;
+      var cols = 3;
+      </script>
+      <ul>
+        <li>Rohit is a BAKA</li>
+        <li>A HUGE BAAAAAKA</li>
+        <li>BAAAAAAAAAAAKAAAAAA</li>
+        <li>This seriously looks stupid as fuck</li>
+        <li>a table would look better.</li>
+      </ul>
+      
+    </div>
+      <footer>
+        <p> Company 2013</p>
+        <img src="http://25.media.tumblr.com/131db079787b22456003aad33c098953/tumblr_mpl90gdGB81qfa5xpo1_500.gif" alt="I hate webDev" width=20% height=20%>
+      </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap-3.0.0/assets/js/jquery.js"></script>
+    <script src="bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="profile.js"></script>
+    <script src="search.js"></script>
+  </body>
+</html>

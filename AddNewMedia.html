@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add New Talent</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/CollabHub.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="//connect.soundcloud.com/sdk.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <form style="margin-bottom: 16px;">
+        <h3 class="form-signin-heading">Add New Media</h3>
+        <input type="text" class="form-control" placeholder="Title" autofocus>
+        <label class="dropdown" style="margin: 8px 0px">
+          <span>Media Type: </span>
+          <a class="dropdown-toggle" data-toggle="dropdown" id="newMediaType">Select Media Type <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a onclick="mediaTypeSelected()">YouTube</a></li>
+            <li><a onclick="mediaTypeSelected()">GitHub</a></li>
+            <li><a onclick="mediaTypeSelected()">SoundCloud</a></li>
+          </ul>
+        </label>
+        <input type="text" id="InputURL" class="form-control" placeholder="URL">
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="EmbedLink()">Select Media</button>
+      </form>
+    </div>
+    <script src="profile.js"></script>
+    <script src="embed.js"></script>
+  </body>
+</html>

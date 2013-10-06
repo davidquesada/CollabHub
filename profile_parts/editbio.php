@@ -1,0 +1,4 @@
+<?php
+	$tempBioContent = $user['bio'];
+?>
+
